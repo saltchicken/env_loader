@@ -6,6 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "env_loader"
 version = "0.1"
 dependencies = [
+  "python-dotenv==1.0.1"
 ]
 
 [tool.setuptools.packages.find]
