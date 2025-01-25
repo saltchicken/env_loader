@@ -11,9 +11,9 @@ class EnvLoader:
 
     def get_env_file_path(self):
         if os.name == "nt":  # Windows
-            self.config_dir = Path(os.getenv("APPDATA", "C:\\Users\\Default\\AppData\\Roaming")) / PROJECT_NAME
+            self.config_dir = Path(os.getenv("APPDATA", "C:\\Users\\Default\\AppData\\Roaming")) / self.project_name
         else:  # Linux/macOS
-            self.config_dir = Path(os.getenv("XDG_CONFIG_HOME", "~/.config")).expanduser() / PROJECT_NAME
+            self.config_dir = Path(os.getenv("XDG_CONFIG_HOME", "~/.config")).expanduser() / self.project_name
 
         self.config_dir.mkdir(parents=True, exist_ok=True)
 
