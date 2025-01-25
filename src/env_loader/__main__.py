@@ -22,6 +22,7 @@ class EnvLoader:
         if self.config_dir.exists():
             load_dotenv(self.config_dir)  # Explicitly pass the path to the .env file
             print(f"✅ Loaded environment variables from {self.config_dir}")
+            print(f"test: {os.getenv('DB_NAME')}")
             return True
         else:
             print(f"⚠️  No .env file found at {self.config_dir}. Please create one.")
