@@ -19,9 +19,9 @@ class EnvLoader:
 
     def load_custom_env(self):
         # Load the .env file from the custom location
-        env_file = self.config_dir / ".env"
-        if env_file.exists():
-            load_dotenv(env_file)  # Explicitly pass the path to the .env file
+        self.env_file = self.config_dir / ".env"
+        if self.env_file.exists():
+            load_dotenv(self.env_file)  # Explicitly pass the path to the .env file
             print(f"✅ Loaded environment variables from {self.config_dir}")
             return True
         else:
@@ -34,7 +34,7 @@ class EnvLoader:
 
             if user_input == "y":
                 # Open the .env file for writing
-                with open(self.config_dir, "w") as env_file:
+                with open(self.env_file, "w") as env_file:
                     print(f"✅ .env file created at {os.path.abspath(self.config_dir)}")
 
                     # Prompt the user for each variable
