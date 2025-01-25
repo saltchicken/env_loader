@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 
 class EnvLoader:
     def __init__(self, project_name, required_vars):
-        self.load_custom_env()
         self.project_name = project_name
         self.required_vars = required_vars
         self.get_env_file_path()
