@@ -19,8 +19,9 @@ class EnvLoader:
 
     def load_custom_env(self):
         # Load the .env file from the custom location
-        if self.config_dir.exists():
-            load_dotenv(self.config_dir / ".env")  # Explicitly pass the path to the .env file
+        env_file = self.config_dir / ".env"
+        if env_file.exists():
+            load_dotenv(env_file)  # Explicitly pass the path to the .env file
             print(f"✅ Loaded environment variables from {self.config_dir}")
             return True
         else:
