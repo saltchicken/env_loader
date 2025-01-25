@@ -1,1 +1,1 @@
-from env_loader import *
+from .__main__ import *
