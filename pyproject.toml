@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "env_loader"
+version = "0.1"
+dependencies = [
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
