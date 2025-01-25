@@ -7,6 +7,8 @@ class EnvLoader:
         self.load_custom_env()
         self.project_name = project_name
         self.required_vars = required_vars
+        self.get_env_file_path()
+        self.check_or_create_env()
 
     def get_env_file_path(self):
         if os.name == "nt":  # Windows
